@@ -1,10 +1,4 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
+Hi, I'm going to be using dbt to bring my data in from cloud storage into Bigquery. I'll also be using it to build analysis tables.
 
 
 ### Resources:
