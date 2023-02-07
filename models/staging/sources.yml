@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: dbt_taxi_data
+    database: zoomcamp-2023
+    loader: gcloud storage
+  
+    tables:
+      - name: taxi_data_combined
+        description: "External table of taxi ride information, stored as CSV (gzipped) files in Cloud Storage"
+        external:
+          location: 'gs://dtc_data_lake_zoomcamp_2023_us/data/fhv/fhv_tripdata_2019-*'
+          options:
+            format: csv
+            skip_leading_rows: 1
+          
+            # if you want a partitioned table, file paths MUST be Hive-style: 
+            #   'gs://bucket/path/collector_hour=2020-01-01/'
+            #   'gs://bucket/path/collector_hour=2020-01-02/' (etc)
+#            hive_partition_uri_prefix: 'gs://bucket/path/'
+#          partitions:               
+#            - name: collector_date
+#              data_type: date
+        
