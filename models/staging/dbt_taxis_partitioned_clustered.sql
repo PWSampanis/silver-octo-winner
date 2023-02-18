@@ -6,4 +6,4 @@
    },
    cluster_by=["affiliated_base_number"]
 ) }}
-select * from {{ ref("dbt_taxis_persisted") }}
+select * from {{ ref("stg_fhv_tripdata") }}
