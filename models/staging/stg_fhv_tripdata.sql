@@ -1,3 +1,3 @@
 {{ config(materialized='view') }}
 
-select * from {{ source('dbt_taxi_data','taxi_data_combined')}}
+select * from {{ source('staging','fhv_tripdata_raw')}}
